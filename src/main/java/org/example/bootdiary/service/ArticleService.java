@@ -1,8 +1,12 @@
 package org.example.bootdiary.service;
 
+import org.example.bootdiary.model.entity.Article;
 import org.springframework.stereotype.Service;
 
-@Service
-public interface ArticleService {
+import java.util.List;
 
+public interface ArticleService {
+    List<Article> findAll();
+
+    void save(Article article);
 }

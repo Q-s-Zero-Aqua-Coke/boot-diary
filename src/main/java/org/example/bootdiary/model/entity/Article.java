@@ -8,12 +8,11 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-@Entity
-@Data
+@Data // Lombok
+@Entity // JPA
 public class Article {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String uuid;
 
     @Column(nullable = false)
@@ -22,7 +21,7 @@ public class Article {
     @Column(nullable = false, length = 2000)
     private String content;
 
-    private String fileName;
+    private String filename;
 
     @CreatedDate
     private LocalDateTime createdAt = LocalDateTime.ofInstant(Instant.now(), ZoneOffset.UTC);
