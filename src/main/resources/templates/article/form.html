@@ -47,7 +47,6 @@
         <label>
             파일 : <input type="file" th:field="*{file}" accept="image/*">
         </label>
-        <!-- TIL : lint -->
         <button th:unless="${edit}">작성</button>
         <button th:if="${edit}">수정</button>
     </form>
